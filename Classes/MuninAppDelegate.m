@@ -3,11 +3,11 @@
 //  Munin
 //
 //  Created by Leon Bogaert on 30-10-10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Tim_online. All rights reserved.
 //
 
 #import "MuninAppDelegate.h"
-#import "RootViewController.h"
+#import "MainScreenLoader.h"
 
 
 @implementation MuninAppDelegate
@@ -20,44 +20,15 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    // Override point for customization after application launch.
-    
-	NSManagedObjectContext *context = [self managedObjectContext];
-	NSError *error;
+	navigationController.view.frame = CGRectMake(0, 20, 320, 460);
+	[window addSubview:[navigationController view]];
 	
-//	NSManagedObject *muninMaster = [NSEntityDescription
-//									   insertNewObjectForEntityForName:@"MuninMaster" 
-//									   inManagedObjectContext:context];
-//	[muninMaster setValue:@"http://munin.ping.uio.no" forKey:@"name"];
-//	
-//	NSManagedObject *host = [NSEntityDescription
-//										  insertNewObjectForEntityForName:@"Host" 
-//										  inManagedObjectContext:context];
-//	[host setValue:@"bimbo.ping.uio.no" forKey:@"name"];
-//	[host setValue:muninMaster forKey:@"muninMaster"];
-//	if (![context save:&error]) {
-//		NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//	}
+	[window makeKeyAndVisible];
+	[navigationController becomeFirstResponder];
 	
-	//List all Masters:
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription 
-								   entityForName:@"MuninMaster" inManagedObjectContext:context];
-	[fetchRequest setEntity:entity];
-	NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-	for (NSManagedObject *info in fetchedObjects) {
-		NSLog(@"Name: %@", [info valueForKey:@"name"]);
-		for (NSManagedObject *host in [info valueForKey:@"hosts"]) {
-			//NSManagedObject *hosts = [info valueForKey:@"hosts"];
-			NSLog(@"Host: %@", host);
-		}
-	}        
-	[fetchRequest release];
-	
-    // Add the navigation controller's view to the window and display.
-    [window addSubview:navigationController.view];
-    [window makeKeyAndVisible];
+	MuninMastersViewController *childController = [MainScreenLoader loadMuninMasters];
+	childController.managedObjectContext = self.managedObjectContext; //Voor CoreData
+	[self.navigationController pushViewController:childController animated:YES];
 
     return YES;
 }
@@ -158,6 +129,7 @@
         return persistentStoreCoordinator;
     }
 	
+	Boolean new = NO;
 	NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"Munin.sqlite"];
 	/*
 	 Set up the store.
@@ -166,6 +138,8 @@
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	// If the expected store doesn't exist, copy the default store.
 	if (![fileManager fileExistsAtPath:storePath]) {
+		new = YES;
+		
 		NSString *defaultStorePath = [[NSBundle mainBundle] pathForResource:@"Munin" ofType:@"sqlite"];
 		if (defaultStorePath) {
 			[fileManager copyItemAtPath:defaultStorePath toPath:storePath error:NULL];
@@ -189,9 +163,36 @@
 		 */
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
-    }    
+    }
+	
+	if (new) {
+		[self populateDatabase];
+	}
 	
     return persistentStoreCoordinator;
+}
+
+- (void)populateDatabase {
+    // Override point for customization after application launch.
+	NSLog(@"populateDatabase called");
+    
+	NSManagedObjectContext *context = [self managedObjectContext];
+	NSError *error;
+	
+		NSManagedObject *muninMaster = [NSEntityDescription
+										   insertNewObjectForEntityForName:@"MuninMaster" 
+										   inManagedObjectContext:context];
+		[muninMaster setValue:@"munin.ping.uio.no" forKey:@"name"];
+		[muninMaster setValue:@"http://munin.ping.uio.no" forKey:@"url"];
+		
+		NSManagedObject *host = [NSEntityDescription
+											  insertNewObjectForEntityForName:@"Host" 
+											  inManagedObjectContext:context];
+		[host setValue:@"bimbo.ping.uio.no" forKey:@"name"];
+		[host setValue:muninMaster forKey:@"muninMaster"];
+		if (![context save:&error]) {
+			NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+		}
 }
 
 
