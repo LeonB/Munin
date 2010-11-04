@@ -1,5 +1,5 @@
 //
-//  Host.h
+//  Service.h
 //  Munin
 //
 //  Created by Leon Bogaert on 04-11-10.
@@ -9,23 +9,25 @@
 #import <CoreData/CoreData.h>
 
 @class HostService;
-@class MuninMaster;
+@class Plugin;
 
-@interface Host :  NSManagedObject  
+@interface Service :  NSManagedObject  
 {
 }
 
-@property (nonatomic, retain) NSNumber * MuninMasterId;
-@property (nonatomic, retain) NSDate * lastSynced;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) MuninMaster * muninMaster;
+@property (nonatomic, retain) NSSet* plugins;
 @property (nonatomic, retain) NSSet* hostServices;
 
 @end
 
 
-@interface Host (CoreDataGeneratedAccessors)
+@interface Service (CoreDataGeneratedAccessors)
+- (void)addPluginsObject:(Plugin *)value;
+- (void)removePluginsObject:(Plugin *)value;
+- (void)addPlugins:(NSSet *)value;
+- (void)removePlugins:(NSSet *)value;
+
 - (void)addHostServicesObject:(HostService *)value;
 - (void)removeHostServicesObject:(HostService *)value;
 - (void)addHostServices:(NSSet *)value;

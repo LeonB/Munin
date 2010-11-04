@@ -26,11 +26,12 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (NSString *)applicationDocumentsDirectory;
+- (void)populateDatabase;
 
 #define CMLog(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
 #define MARK	CMLog(@"%s", __PRETTY_FUNCTION__);
 #define START_TIMER NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 #define END_TIMER(msg) 	NSTimeInterval stop = [NSDate timeIntervalSinceReferenceDate]; CMLog([NSString stringWithFormat:@"%@ Time = %f", msg, stop-start]);
-#define APPDELEGATE (ADB2AppDelegate *)[[UIApplication sharedApplication] delegate];
+#define APPDELEGATE (MuninAppDelegate *)[[UIApplication sharedApplication] delegate];
 
 @end

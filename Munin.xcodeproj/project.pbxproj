@@ -13,14 +13,11 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		3520DFFE127DC4D000933FCC /* Munin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3520DFFD127DC4D000933FCC /* Munin-Info.plist */; };
 		3520E000127DC4FD00933FCC /* __Munin.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3520DFFF127DC4FD00933FCC /* __Munin.sqlite */; };
 		3520E070127DCB6900933FCC /* libSimpleTableViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3520E06F127DCB1700933FCC /* libSimpleTableViewController.a */; };
 		3520E1C4127DCE6E00933FCC /* MainScreenLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520E1C3127DCE6E00933FCC /* MainScreenLoader.m */; };
 		3520E1CD127DCEF200933FCC /* MuninMastersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520E1CB127DCEF200933FCC /* MuninMastersViewController.m */; };
 		3520E1CE127DCEF200933FCC /* MuninMastersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3520E1CC127DCEF200933FCC /* MuninMastersViewController.xib */; };
-		3520E341127DEAD700933FCC /* MuninMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520E340127DEAD700933FCC /* MuninMaster.m */; };
-		3520E375127DEC2400933FCC /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520E374127DEC2400933FCC /* Host.m */; };
 		3520E3BF127DEE0100933FCC /* MuninMasterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3520E320127DE9DB00933FCC /* MuninMasterTableViewCell.m */; };
 		35428F16127CE55700EB7486 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 35428F15127CE55700EB7486 /* README */; };
 		35498921127C0492003A1D28 /* libElementParser.a in Sources */ = {isa = PBXBuildFile; fileRef = 35498904127C03D8003A1D28 /* libElementParser.a */; };
@@ -30,6 +27,14 @@
 		35736BF7127CDE280044A6A3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 35736BF6127CDE280044A6A3 /* Icon.png */; };
 		35736C0B127CDF6B0044A6A3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35736C0A127CDF6B0044A6A3 /* Icon@2x.png */; };
 		35736C1A127CDFDE0044A6A3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 35736C19127CDFDE0044A6A3 /* Icon-72.png */; };
+		35799F7D1281E813009824AD /* HomePageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35799F7C1281E813009824AD /* HomePageParser.m */; };
+		35799FAD1281EA03009824AD /* NSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 35799FAC1281EA03009824AD /* NSSingleton.m */; };
+		35FA59FE1282932E00EE91EE /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F51282932E00EE91EE /* Service.m */; };
+		35FA59FF1282932E00EE91EE /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F71282932E00EE91EE /* Host.m */; };
+		35FA5A001282932E00EE91EE /* MuninMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F91282932E00EE91EE /* MuninMaster.m */; };
+		35FA5A011282932E00EE91EE /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59FB1282932E00EE91EE /* Plugin.m */; };
+		35FA5A021282932E00EE91EE /* HostService.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59FD1282932E00EE91EE /* HostService.m */; };
+		35FA5A0B128293CC00EE91EE /* HostPageparser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA5A0A128293CC00EE91EE /* HostPageparser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3520E06A127DCB1700933FCC /* SimpleTableViewController.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSimpleTableViewController.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = SimpleTableViewController;
 		};
 		35498903127C03D8003A1D28 /* PBXContainerItemProxy */ = {
@@ -58,8 +63,8 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* MuninAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* MuninAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* MuninAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuninAppDelegate.h; path = Classes/MuninAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MuninAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuninAppDelegate.m; path = Classes/MuninAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Munin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,17 +74,13 @@
 		3520DFFD127DC4D000933FCC /* Munin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Munin-Info.plist"; path = "MuninData/Munin-Info.plist"; sourceTree = "<group>"; };
 		3520DFFF127DC4FD00933FCC /* __Munin.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = __Munin.sqlite; path = MuninData/__Munin.sqlite; sourceTree = "<group>"; };
 		3520E06A127DCB1700933FCC /* SimpleTableViewController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleTableViewController.xcodeproj; path = ../SimpleTableViewController/SimpleTableViewController.xcodeproj; sourceTree = SOURCE_ROOT; };
-		3520E1C2127DCE6E00933FCC /* MainScreenLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenLoader.h; sourceTree = "<group>"; };
-		3520E1C3127DCE6E00933FCC /* MainScreenLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenLoader.m; sourceTree = "<group>"; };
-		3520E1CA127DCEF200933FCC /* MuninMastersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMastersViewController.h; sourceTree = "<group>"; };
-		3520E1CB127DCEF200933FCC /* MuninMastersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMastersViewController.m; sourceTree = "<group>"; };
+		3520E1C2127DCE6E00933FCC /* MainScreenLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScreenLoader.h; path = Classes/MainScreenLoader.h; sourceTree = "<group>"; };
+		3520E1C3127DCE6E00933FCC /* MainScreenLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScreenLoader.m; path = Classes/MainScreenLoader.m; sourceTree = "<group>"; };
+		3520E1CA127DCEF200933FCC /* MuninMastersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuninMastersViewController.h; path = Classes/MuninMastersViewController.h; sourceTree = "<group>"; };
+		3520E1CB127DCEF200933FCC /* MuninMastersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuninMastersViewController.m; path = Classes/MuninMastersViewController.m; sourceTree = "<group>"; };
 		3520E1CC127DCEF200933FCC /* MuninMastersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MuninMastersViewController.xib; path = Classes/MuninMastersViewController.xib; sourceTree = "<group>"; };
 		3520E31F127DE9DB00933FCC /* MuninMasterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMasterTableViewCell.h; sourceTree = "<group>"; };
 		3520E320127DE9DB00933FCC /* MuninMasterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMasterTableViewCell.m; sourceTree = "<group>"; };
-		3520E33F127DEAD700933FCC /* MuninMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMaster.h; sourceTree = "<group>"; };
-		3520E340127DEAD700933FCC /* MuninMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMaster.m; sourceTree = "<group>"; };
-		3520E373127DEC2400933FCC /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
-		3520E374127DEC2400933FCC /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Host.m; sourceTree = "<group>"; };
 		35428F15127CE55700EB7486 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		354988FF127C03D8003A1D28 /* ElementParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElementParser.xcodeproj; path = ../ElementParser/ElementParser.xcodeproj; sourceTree = SOURCE_ROOT; };
 		35498958127C3AE7003A1D28 /* Host.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Host.xcdatamodel; sourceTree = "<group>"; };
@@ -87,6 +88,23 @@
 		35736BF6127CDE280044A6A3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		35736C0A127CDF6B0044A6A3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		35736C19127CDFDE0044A6A3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		35799F7B1281E813009824AD /* HomePageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageParser.h; sourceTree = "<group>"; };
+		35799F7C1281E813009824AD /* HomePageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageParser.m; sourceTree = "<group>"; };
+		35799F861281E937009824AD /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		35799FAB1281EA03009824AD /* NSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSingleton.h; sourceTree = "<group>"; };
+		35799FAC1281EA03009824AD /* NSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSingleton.m; sourceTree = "<group>"; };
+		35FA59F41282932E00EE91EE /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		35FA59F51282932E00EE91EE /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		35FA59F61282932E00EE91EE /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
+		35FA59F71282932E00EE91EE /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Host.m; sourceTree = "<group>"; };
+		35FA59F81282932E00EE91EE /* MuninMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMaster.h; sourceTree = "<group>"; };
+		35FA59F91282932E00EE91EE /* MuninMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMaster.m; sourceTree = "<group>"; };
+		35FA59FA1282932E00EE91EE /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
+		35FA59FB1282932E00EE91EE /* Plugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plugin.m; sourceTree = "<group>"; };
+		35FA59FC1282932E00EE91EE /* HostService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostService.h; sourceTree = "<group>"; };
+		35FA59FD1282932E00EE91EE /* HostService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostService.m; sourceTree = "<group>"; };
+		35FA5A09128293CC00EE91EE /* HostPageparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostPageparser.h; sourceTree = "<group>"; };
+		35FA5A0A128293CC00EE91EE /* HostPageparser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostPageparser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +127,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3520E1C2127DCE6E00933FCC /* MainScreenLoader.h */,
-				3520E1C3127DCE6E00933FCC /* MainScreenLoader.m */,
-				1D3623240D0F684500981E51 /* MuninAppDelegate.h */,
-				1D3623250D0F684500981E51 /* MuninAppDelegate.m */,
-				3520E1CA127DCEF200933FCC /* MuninMastersViewController.h */,
-				3520E1CB127DCEF200933FCC /* MuninMastersViewController.m */,
+				35799F781281E7DE009824AD /* Parsers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -134,6 +147,7 @@
 				3520DFEF127DC47F00933FCC /* Application Resources */,
 				35498953127C398B003A1D28 /* Models */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				35799F771281E7C8009824AD /* Controllers */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				3520E31E127DE99000933FCC /* Table Cells */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -178,6 +192,17 @@
 			children = (
 				3520DFFF127DC4FD00933FCC /* __Munin.sqlite */,
 				3520DFFD127DC4D000933FCC /* Munin-Info.plist */,
+				35498958127C3AE7003A1D28 /* Host.xcdatamodel */,
+				35FA59F41282932E00EE91EE /* Service.h */,
+				35FA59F51282932E00EE91EE /* Service.m */,
+				35FA59F61282932E00EE91EE /* Host.h */,
+				35FA59F71282932E00EE91EE /* Host.m */,
+				35FA59F81282932E00EE91EE /* MuninMaster.h */,
+				35FA59F91282932E00EE91EE /* MuninMaster.m */,
+				35FA59FA1282932E00EE91EE /* Plugin.h */,
+				35FA59FB1282932E00EE91EE /* Plugin.m */,
+				35FA59FC1282932E00EE91EE /* HostService.h */,
+				35FA59FD1282932E00EE91EE /* HostService.m */,
 			);
 			name = "Application Resources";
 			sourceTree = "<group>";
@@ -195,6 +220,9 @@
 			children = (
 				3520E06A127DCB1700933FCC /* SimpleTableViewController.xcodeproj */,
 				354988FF127C03D8003A1D28 /* ElementParser.xcodeproj */,
+				35799FAB1281EA03009824AD /* NSSingleton.h */,
+				35799FAC1281EA03009824AD /* NSSingleton.m */,
+				35799F861281E937009824AD /* SynthesizeSingleton.h */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -262,13 +290,32 @@
 		35498954127C3994003A1D28 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				35498958127C3AE7003A1D28 /* Host.xcdatamodel */,
-				3520E373127DEC2400933FCC /* Host.h */,
-				3520E374127DEC2400933FCC /* Host.m */,
-				3520E33F127DEAD700933FCC /* MuninMaster.h */,
-				3520E340127DEAD700933FCC /* MuninMaster.m */,
 			);
 			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		35799F771281E7C8009824AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3520E1C2127DCE6E00933FCC /* MainScreenLoader.h */,
+				3520E1C3127DCE6E00933FCC /* MainScreenLoader.m */,
+				1D3623240D0F684500981E51 /* MuninAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MuninAppDelegate.m */,
+				3520E1CA127DCEF200933FCC /* MuninMastersViewController.h */,
+				3520E1CB127DCEF200933FCC /* MuninMastersViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		35799F781281E7DE009824AD /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				35799F7B1281E813009824AD /* HomePageParser.h */,
+				35799F7C1281E813009824AD /* HomePageParser.m */,
+				35FA5A09128293CC00EE91EE /* HostPageparser.h */,
+				35FA5A0A128293CC00EE91EE /* HostPageparser.m */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +405,6 @@
 				35736C0B127CDF6B0044A6A3 /* Icon@2x.png in Resources */,
 				35736C1A127CDFDE0044A6A3 /* Icon-72.png in Resources */,
 				35428F16127CE55700EB7486 /* README in Resources */,
-				3520DFFE127DC4D000933FCC /* Munin-Info.plist in Resources */,
 				3520E000127DC4FD00933FCC /* __Munin.sqlite in Resources */,
 				3520E1CE127DCEF200933FCC /* MuninMastersViewController.xib in Resources */,
 			);
@@ -377,9 +423,15 @@
 				35498959127C3AE7003A1D28 /* Host.xcdatamodel in Sources */,
 				3520E1C4127DCE6E00933FCC /* MainScreenLoader.m in Sources */,
 				3520E1CD127DCEF200933FCC /* MuninMastersViewController.m in Sources */,
-				3520E341127DEAD700933FCC /* MuninMaster.m in Sources */,
-				3520E375127DEC2400933FCC /* Host.m in Sources */,
 				3520E3BF127DEE0100933FCC /* MuninMasterTableViewCell.m in Sources */,
+				35799F7D1281E813009824AD /* HomePageParser.m in Sources */,
+				35799FAD1281EA03009824AD /* NSSingleton.m in Sources */,
+				35FA59FE1282932E00EE91EE /* Service.m in Sources */,
+				35FA59FF1282932E00EE91EE /* Host.m in Sources */,
+				35FA5A001282932E00EE91EE /* MuninMaster.m in Sources */,
+				35FA5A011282932E00EE91EE /* Plugin.m in Sources */,
+				35FA5A021282932E00EE91EE /* HostService.m in Sources */,
+				35FA5A0B128293CC00EE91EE /* HostPageparser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +460,10 @@
 					"${PROJECT_DIR}/../ElementParser/**",
 				);
 				INFOPLIST_FILE = "MuninData/Munin-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Munin;
 			};
 			name = Debug;
@@ -424,6 +480,10 @@
 					"${PROJECT_DIR}/../ElementParser/**",
 				);
 				INFOPLIST_FILE = "MuninData/Munin-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Munin;
 				VALIDATE_PRODUCT = YES;
 			};

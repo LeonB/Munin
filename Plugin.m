@@ -1,20 +1,18 @@
 // 
-//  MuninMaster.m
+//  Plugin.m
 //  Munin
 //
 //  Created by Leon Bogaert on 04-11-10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "MuninMaster.h"
+#import "Plugin.h"
 
-#import "Host.h"
+#import "Service.h"
 
-@implementation MuninMaster 
+@implementation Plugin 
 
-@dynamic lastSynced;
 @dynamic name;
-@dynamic url;
-@dynamic hosts;
+@dynamic service;
 
 @end

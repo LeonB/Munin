@@ -1,20 +1,20 @@
 // 
-//  MuninMaster.m
+//  HostService.m
 //  Munin
 //
 //  Created by Leon Bogaert on 04-11-10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "MuninMaster.h"
+#import "HostService.h"
 
 #import "Host.h"
+#import "Service.h"
 
-@implementation MuninMaster 
+@implementation HostService 
 
-@dynamic lastSynced;
-@dynamic name;
 @dynamic url;
-@dynamic hosts;
+@dynamic service;
+@dynamic host;
 
 @end

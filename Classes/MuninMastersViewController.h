@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SimpleTableViewControllerActions.h"
 
-@interface MuninMastersViewController : SimpleTableViewControllerActions <NSFetchedResultsControllerDelegate> {
+@interface MuninMastersViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 @private
 	NSFetchedResultsController *fetchedResultsController;
     NSManagedObjectContext *managedObjectContext;

@@ -4,3 +4,17 @@ http://www.raywenderlich.com/934/core-data-tutorial-getting-started
 http://www.amateurinmotion.com/articles/2009/02/08/creating-a-static-library-for-iphone.html
 
 Removing old sqlite database: rm -r ~/Library/Application\ Support/iPhone\ Simulator/*/Applications/*/Documents/Munin.sqlite
+
+Using categories from a library with iPhone: http://developer.apple.com/library/mac/#qa/qa2006/qa1490.html
+Use the "Other linker flags" option: -all_load
+
+ => I don't know why, but the configurations of all subprojects should be the same as the Munin project.
+ E.g.: Device/Simulator v.s. Arm6/Arm7
+ 
+ ManyToMany:
+   - http://www.iphonedevsdk.com/forum/iphone-sdk-development/51050-core-data-many-relationship-question.html
+ 
+ FindOrCreate:
+   - http://stackoverflow.com/questions/2209228/core-data-pattern-how-to-efficiently-update-local-info-with-changes-from-network
+   - http://henrik.nyh.se/2007/01/importing-legacy-data-into-core-data-with-the-find-or-create-or-delete-pattern
+   - http://developer.apple.com/library/mac/#DOCUMENTATION/Cocoa/Conceptual/CoreData/Articles/cdImporting.html

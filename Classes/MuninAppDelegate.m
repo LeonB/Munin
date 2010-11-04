@@ -8,7 +8,7 @@
 
 #import "MuninAppDelegate.h"
 #import "MainScreenLoader.h"
-
+#import "HomePageParser.h"
 
 @implementation MuninAppDelegate
 
@@ -20,6 +20,8 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	return [self parseHomePage];
+	
 	navigationController.view.frame = CGRectMake(0, 20, 320, 460);
 	[window addSubview:[navigationController view]];
 	
@@ -33,6 +35,9 @@
     return YES;
 }
 
+- (void)parseHomePage {
+	[[HomePageParser sharedHomePageParser] parse];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -189,9 +194,11 @@
 											  insertNewObjectForEntityForName:@"Host" 
 											  inManagedObjectContext:context];
 		[host setValue:@"bimbo.ping.uio.no" forKey:@"name"];
+		[host setValue:@"lalalala!" forKey:@"url"];
 		[host setValue:muninMaster forKey:@"muninMaster"];
 		if (![context save:&error]) {
 			NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+			NSLog(@"error: %@", error);
 		}
 }
 
