@@ -11,7 +11,7 @@
 #import "MuninMaster.h"
 
 @implementation MuninMastersViewController
-@synthesize fetchedResultsController, managedObjectContext;
+@synthesize fetchedResultsController, managedObjectContext, muninMasterViewController;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -26,7 +26,7 @@
     self.navigationItem.rightBarButtonItem = addButtonItem;
     [addButtonItem release];
 	
-	self.title = @"Lekker!";
+	self.title = @"Dashboard!";
 	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
@@ -235,7 +235,33 @@
 //}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath inBackground:(Boolean)background {
-	NSLog(@"Nice!");
+	switch (indexPath.section) {
+		case 1:
+			[self didSelectMuninMasterCellAtIndexPath:indexPath];
+			break;
+	}
+}
+			 
+ - (void)didSelectMuninMasterCellAtIndexPath:(NSIndexPath *)indexPath {
+	 NSIndexPath *newIndexpath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+	 MuninMaster *muninMaster = (MuninMaster *)[fetchedResultsController objectAtIndexPath:newIndexpath];
+	 [self loadMuninMasterView:muninMaster];
+ }
+
+- (void)loadMuninMasterView:(MuninMaster *)muninMaster {
+	NSLog(@"loadMuninMasterView");
+	
+	MuninMasterViewController *controller;
+	//if (![controller.muninMaster.name isEqual:muninMaster.name]) { // =! Kan! Want autoId is een integer....
+		controller = [[MuninMasterViewController alloc] initWithNibName:@"MuninMasterViewController" bundle:nil];
+		
+		controller.muninMaster = muninMaster;
+		
+		self.muninMasterViewController = controller;
+		//[controller release];
+	//}
+	
+	[self pushViewControllerOnMainThread:self.muninMasterViewController animated:YES];
 }
 
 #pragma mark -

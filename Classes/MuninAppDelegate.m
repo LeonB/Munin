@@ -20,7 +20,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	return [self parseHomePage];
+	//return [self parseHomePage];
 	
 	navigationController.view.frame = CGRectMake(0, 20, 320, 460);
 	[window addSubview:[navigationController view]];
@@ -193,7 +193,7 @@
 		NSManagedObject *host = [NSEntityDescription
 											  insertNewObjectForEntityForName:@"Host" 
 											  inManagedObjectContext:context];
-		[host setValue:@"bimbo.ping.uio.no" forKey:@"name"];
+		[host setValue:@"test.com" forKey:@"name"];
 		[host setValue:@"lalalala!" forKey:@"url"];
 		[host setValue:muninMaster forKey:@"muninMaster"];
 		if (![context save:&error]) {

@@ -7,8 +7,8 @@
 //
 
 #import "MuninMaster.h"
-
 #import "Host.h"
+#import "HomePageParser.h"
 
 @implementation MuninMaster 
 
@@ -16,5 +16,12 @@
 @dynamic name;
 @dynamic url;
 @dynamic hosts;
+
+-(Boolean)sync {
+	NSURL *url = [[NSURL alloc] initWithString:self.url];
+	[[HomePageParser sharedHomePageParser] parse:url];
+	
+	return YES;
+}
 
 @end

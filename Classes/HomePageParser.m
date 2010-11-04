@@ -18,7 +18,11 @@
 @implementation HomePageParser
 SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 
-- (void)parse {
+/**
+ *@Todo: even kijken of ik een callback kan maken zodat de cellen dynamisch verschijnen
+**/
+
+- (void)parse:(NSURL *)homePageUrl {
 	MuninAppDelegate *appDelegate = APPDELEGATE;
 	NSManagedObjectContext *managedObjectContext = [[appDelegate managedObjectContext] retain];
 	

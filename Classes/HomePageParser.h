@@ -13,4 +13,7 @@
 
 }
 
++ (HomePageParser *)sharedHomePageParser;
+- (void)parse:(NSURL *)url;
+
 @end
