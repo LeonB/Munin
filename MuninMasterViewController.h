@@ -10,15 +10,22 @@
 #import "MuninMaster.h"
 #import "HostTableViewCell.h"
 #import "UITableViewControllerWithRefresh.h"
+#import "HostViewController.h"
 
-@interface MuninMasterViewController : UITableViewControllerWithRefresh <NSFetchedResultsControllerDelegate> {
+@interface MuninMasterViewController : UITableViewControllerWithRefresh {
 	MuninMaster *muninMaster;
 	NSArray *hosts;
+	HostViewController *hostViewController;
 }
 
 @property (nonatomic, retain) MuninMaster *muninMaster;
 @property (nonatomic, retain) NSArray *hosts;
+@property (nonatomic, retain) HostViewController *hostViewController;
 
+- (void)sortHosts;
 - (void)configureCell:(HostTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath inBackground:(Boolean)background;
+- (void)didSelectHostCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)loadHostView:(Host *)host;
 
 @end

@@ -20,6 +20,7 @@
 @dynamic hosts;
 
 -(Boolean)sync {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSURL *url = [[NSURL alloc] initWithString:self.url];
 	MuninMaster *muninMaster = [[HomePageParser sharedHomePageParser] parse:url];
 	
@@ -27,13 +28,13 @@
 	NSDictionary *hostsToImport = [[NSMutableDictionary alloc] init];
 	NSLog(@"objectId: %@", [self objectID]);
 	for (Host *host in muninMaster.hosts) {
-		//[[host setMuninMasterId:[NSNumber alloc] initWi]];
 		NSMutableDictionary *hostDict = [[NSMutableDictionary alloc] init];
 		[hostDict setValue:host.name forKey:@"name"];
 		[hostDict setValue:host.url forKey:@"url"];
 		[hostDict setValue:self forKey:@"muninMaster"];
 		
 		[hostsToImport setValue:hostDict forKey:host.name];
+		[hostDict release];
 	}
 	
 	//NSLog(@"hostsToImport: %@", hostsToImport);
@@ -51,6 +52,9 @@
 	self.lastSynced = [NSDate date];
 	[self.managedObjectContext processPendingChanges];
 	
+	[pool drain]; //has a release in it
+	[hostsToImport release];
+	[url release];
 	return YES;
 }
 

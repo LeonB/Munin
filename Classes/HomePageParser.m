@@ -51,9 +51,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 			//NSLog(@"hostElement: %@", hostElement);
 			//NSLog(@"host: %@", hostElement.contentsText);
 			
+			NSString *base = [NSString stringWithFormat:@"%@", url];
+			NSString *path = [[hostElement selectElement: @"a"] attribute:@"href"];
+			
 			Host *host = [NSEntityDescription insertNewObjectForEntityForName:@"Host" inManagedObjectContext:managedObjectContext];
 			host.name = hostElement.contentsText;
-			host.url = [[hostElement selectElement: @"a"] attribute:@"href"];
+			host.url = [NSString stringWithFormat:@"%@/%@", base, path];
 			
 			NSArray *serviceElements = [(Element *)[hostElement parent] selectElements: @"li a"];
 			for (Element *serviceElement in serviceElements) {
@@ -64,7 +67,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 				service.name = serviceElement.contentsText;
 				
 				HostService *hostService = [NSEntityDescription insertNewObjectForEntityForName:@"HostService" inManagedObjectContext:managedObjectContext];
-				hostService.url = [[serviceElement selectElement: @"a"] attribute:@"href"];
+				
+				NSString *base = [NSString stringWithFormat:@"%@", url];
+				NSString *path = [[serviceElement selectElement: @"a"] attribute:@"href"];
+				
+				hostService.url = [NSString stringWithFormat:@"%@/%@", base, path];
 				hostService.host = host;
 				hostService.service = service;
 			}
@@ -80,6 +87,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 //		NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
 //		NSLog(@"error: %@", error);
 //	}
+	
+	//[managedObjectContext release];
+	//[err release];
 	
 	return muninMaster;
 }

@@ -8,9 +8,10 @@
 
 #import "MuninMasterViewController.h"
 #import "HostTableViewCell.h"
+#import "HostViewController.h"
 
 @implementation MuninMasterViewController
-@synthesize muninMaster, hosts;
+@synthesize muninMaster, hosts, hostViewController;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -118,6 +119,12 @@
     cell.host = host;
 }
 
+- (void)reloadTableViewDataSource {
+	[super reloadTableViewDataSource];
+	self.muninMaster.url = @"http://monitor.tim-online.nl";
+	[self.muninMaster performSelectorInBackground:@selector(sync) withObject:nil];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -163,6 +170,37 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath inBackground:(Boolean)background {
+	[self didSelectHostCellAtIndexPath:indexPath];
+}
+
+- (void)didSelectHostCellAtIndexPath:(NSIndexPath *)indexPath {
+	Host *host = [self.hosts objectAtIndex:indexPath.row];
+	[self loadHostView:host];
+}
+
+- (void)loadHostView:(Host *)host {
+	NSLog(@"loadHostView");
+	
+	HostViewController *controller = self.hostViewController;
+	if (![controller.host.name isEqual:host.name]) { // =! Kan! Want autoId is een integer....
+		controller = [[HostViewController alloc] initWithNibName:@"HostViewController" bundle:nil];
+		
+		controller.host = host;
+		
+		self.hostViewController = controller;
+		[controller release];
+	}
+	
+	[self.navigationController pushViewControllerOnMainThread:self.hostViewController animated:YES];
+}
+
+
+#pragma mark -
+#pragma mark NSFetchedResultsController methods
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self sortHosts];
+	[self.tableView reloadData];
 }
 
 

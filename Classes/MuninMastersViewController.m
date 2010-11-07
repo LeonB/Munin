@@ -299,7 +299,29 @@
     }
 	
 	return fetchedResultsController;
-} 
+}
+
+#pragma mark -
+#pragma mark NSFetchedResultsController methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	NSLog(@"controllerDidChangeContent: %@", controller);
+	if ([self.muninMasterViewController respondsToSelector:@selector(controllerDidChangeContent:)]) {
+		[self.muninMasterViewController controllerDidChangeContent:controller];
+	}
+}
 
 #pragma mark -
 #pragma mark Memory management

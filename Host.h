@@ -2,7 +2,7 @@
 //  Host.h
 //  Munin
 //
-//  Created by Leon Bogaert on 04-11-10.
+//  Created by Leon Bogaert on 07-11-10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 @class HostService;
 @class MuninMaster;
 
-@interface Host :  NSManagedObject  
+@interface Host :  NSManagedObject
 {
 }
 
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) MuninMaster * muninMaster;
 @property (nonatomic, retain) NSSet* hostServices;
+@property (nonatomic, retain) NSArray* services;
 
 @end
 
