@@ -22,31 +22,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
  *@Todo: even kijken of ik een callback kan maken zodat de cellen dynamisch verschijnen
 **/
 
-- (void)parse:(NSURL *)homePageUrl {
+- (MuninMaster *)parse:(NSURL *)url {
 	MuninAppDelegate *appDelegate = APPDELEGATE;
-	NSManagedObjectContext *managedObjectContext = [[appDelegate managedObjectContext] retain];
-	
-	//MuninMaster *muninMaster = [NSEntityDescription insertNewObjectForEntityForName:@"MuninMaster" inManagedObjectContext:managedObjectContext];
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	//fetchRequest.entity = [muninMaster entity];
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"MuninMaster" inManagedObjectContext:managedObjectContext]];
-	
-	NSPredicate *predicate = [NSPredicate
-							  predicateWithFormat:@"name=%@", @"munin.ping.uio.no"];
-	[fetchRequest setPredicate:predicate];
-	
-	NSError *error;
-	NSArray *items = [managedObjectContext
-					  executeFetchRequest:fetchRequest error:&error];
-	
-	MuninMaster *muninMaster = [items objectAtIndex:0];
-	[fetchRequest release]; 
+	NSManagedObjectContext *managedObjectContext = [[[NSManagedObjectContext alloc] init] autorelease];
+	[managedObjectContext setPersistentStoreCoordinator:appDelegate.persistentStoreCoordinator];
+	MuninMaster *muninMaster = [NSEntityDescription insertNewObjectForEntityForName:@"MuninMaster" inManagedObjectContext:managedObjectContext];
 	
 	NSLog(@"Starting download webpage");
 	
 	NSError *err = [[[NSError alloc] init] autorelease];
-	NSString *url = [[NSString stringWithString:muninMaster.url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	NSString *source = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:&err];
+	//NSString *url = [[NSString stringWithString:url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString *source = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&err];
 	if(err.code != 0) {
 		//HANDLE ERROR HERE
 	}
@@ -94,6 +80,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 //		NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
 //		NSLog(@"error: %@", error);
 //	}
+	
+	return muninMaster;
 }
 
 @end

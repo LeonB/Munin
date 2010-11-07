@@ -258,10 +258,10 @@
 		controller.muninMaster = muninMaster;
 		
 		self.muninMasterViewController = controller;
-		//[controller release];
+		[controller release];
 	//}
 	
-	[self pushViewControllerOnMainThread:self.muninMasterViewController animated:YES];
+	[self.navigationController pushViewControllerOnMainThread:self.muninMasterViewController animated:YES];
 }
 
 #pragma mark -

@@ -3,7 +3,7 @@
 //  Munin
 //
 //  Created by Leon Bogaert on 04-11-10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Tim_online. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
@@ -27,6 +27,7 @@
 - (void)removeHostsObject:(Host *)value;
 - (void)addHosts:(NSSet *)value;
 - (void)removeHosts:(NSSet *)value;
+- (Boolean)sync;
 
 @end
 

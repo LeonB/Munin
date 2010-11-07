@@ -7,13 +7,13 @@
 //
 
 //#import <Cocoa/Cocoa.h>
-
+#import "MuninMaster.h"
 
 @interface HomePageParser : NSObject {
 
 }
 
 + (HomePageParser *)sharedHomePageParser;
-- (void)parse:(NSURL *)url;
+- (MuninMaster *)parse:(NSURL *)url;
 
 @end

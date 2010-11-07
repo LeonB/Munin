@@ -10,18 +10,45 @@
 #import "HostTableViewCell.h"
 
 @implementation MuninMasterViewController
-@synthesize muninMaster;
+@synthesize muninMaster, hosts;
 
 #pragma mark -
 #pragma mark View lifecycle
+
+//- (void)setMuninMaster:(MuninMaster *)newMuninMaster {
+//	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+//	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+//	
+//	newMuninMaster.hosts = [NSSet setWithArray:[[newMuninMaster.hosts allObjects] sortedArrayUsingDescriptors:sortDescriptors]];
+//	muninMaster = newMuninMaster;
+//	
+//	[sortDescriptor release];
+//	[sortDescriptors release];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 	self.title = [NSString stringWithFormat:@"%@", self.muninMaster.name];
 	
+	if (!self.muninMaster.lastSynced) {
+		NSLog(@"muninMaster is nog niet gesynced!");
+		[self.muninMaster sync];
+		//[self.tableView reloadData];
+	}
+	[self sortHosts];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)sortHosts {
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	NSArray *sortedHosts = [[muninMaster.hosts allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+	self.hosts = sortedHosts;
+	
+	[sortDescriptor release];
+	[sortDescriptors release];
 }
 
 /*
@@ -30,15 +57,10 @@
 }
 */
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-	NSLog(@"Geladen!");
-	
-	if (!self.muninMaster.lastSynced) {
-		NSLog(@"muninMaster is nog niet gesynced!");
-		[self.muninMaster sync];
-	}
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//	NSLog(@"Geladen!");
+//}
 
 /*
 - (void)viewWillDisappear:(BOOL)animated {
@@ -69,10 +91,8 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    //return <#number of rows in section#>;
-	//[[self.muninMaster.hosts allObjects] objectAtIndex:section];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {	
+	NSLog(@"[self.muninMaster.hosts count]: %i", [self.muninMaster.hosts count]);
 	return [self.muninMaster.hosts count];
 }
 
@@ -94,8 +114,7 @@
 
 - (void)configureCell:(HostTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell
-	
-	Host *host = [[self.muninMaster.hosts allObjects] objectAtIndex:indexPath.row];
+	Host *host = [self.hosts objectAtIndex:indexPath.row];
     cell.host = host;
 }
 
