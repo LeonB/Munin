@@ -1,5 +1,5 @@
 @interface NSManagedObjectContext (UpdateEntity)
-- (void)updateEntity:(NSString *)entity fromDictionary:(NSDictionary *)importDict withIdentifier:(NSString *)identifier overwriting:(NSArray *)overwritables andError:(NSError **)error;
+- (NSDictionary *)updateEntity:(NSString *)entity fromDictionary:(NSDictionary *)importDict withIdentifier:(NSString *)identifier overwriting:(NSArray *)overwritables andError:(NSError **)error;
 @end
 
 @implementation NSManagedObjectContext (UpdateEntity)
@@ -9,8 +9,9 @@
 	{"some.channel.se" => {"displayName" => "Some Channel", "baseURL" => "http://www.example.com/"}}.
 */
 
-- (void)updateEntity:(NSString *)entity fromDictionary:(NSDictionary *)importDict withIdentifier:(NSString *)identifier overwriting:(NSArray *)overwritables andError:(NSError **)error {
-
+- (NSDictionary *)updateEntity:(NSString *)entity fromDictionary:(NSDictionary *)importDict withIdentifier:(NSString *)identifier overwriting:(NSArray *)overwritables andError:(NSError **)error {
+	NSMutableDictionary *exportDict = [[NSMutableDictionary alloc] init];
+	
 	// Get the sorted import identifiers
 	NSArray *identifiersToImport = [[importDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
 	
@@ -51,6 +52,9 @@
 				[thisObject setValuesForKeysWithDictionary:overwriteAttributes]; 
 			}
 			
+			//Add it to the export
+			[exportDict setObject:thisObject forKey:thisImportIdentifier];
+			
 			// Move ahead in both lists
 			thisObject = [objectIterator nextObject];
 			thisImportIdentifier = [importIterator nextObject];
@@ -62,6 +66,10 @@
 			NSManagedObject *newObject = [NSEntityDescription insertNewObjectForEntityForName:entity inManagedObjectContext:self];
 			[newObject setValue:thisImportIdentifier forKey:identifier];
 			[newObject setValuesForKeysWithDictionary:[importDict objectForKey:thisImportIdentifier]];
+			
+			//Add it to the export
+			[exportDict setObject:newObject forKey:thisImportIdentifier];
+			
 			thisImportIdentifier = [importIterator nextObject];
 			
 		} else {  // Imported item sorts after stored item
@@ -73,6 +81,8 @@
 
 		}
 	}
+	
+	return exportDict;
 }
 
 @end

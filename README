@@ -11,6 +11,9 @@ Use the "Other linker flags" option: -all_load
  => I don't know why, but the configurations of all subprojects should be the same as the Munin project.
  E.g.: Device/Simulator v.s. Arm6/Arm7
  
+Core Data overzicht:
+  - http://cocoadevcentral.com/articles/000086.php
+ 
  Deleting objects with core data:
    - http://cocoawithlove.com/2008/04/propagate-deletes-immediately-in-core.html
  

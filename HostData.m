@@ -1,18 +1,20 @@
 // 
-//  Service.m
+//  HostData.m
 //  Munin
 //
 //  Created by Leon Bogaert on 10-11-10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "Service.h"
+#import "HostData.h"
 
+#import "Host.h"
 #import "Plugin.h"
 
-@implementation Service 
+@implementation HostData 
 
-@dynamic name;
-@dynamic plugins;
+@dynamic url;
+@dynamic plugin;
+@dynamic host;
 
 @end

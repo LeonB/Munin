@@ -10,13 +10,13 @@
 #import "Host.h"
 #import "UITableViewControllerWithRefresh.h"
 
-@interface HostViewController : UITableViewControllerWithRefresh {
+@interface HostViewController : UITableViewControllerWithRefresh <NSFetchedResultsControllerDelegate> {
 	Host *host;
-	NSArray *services;
+	NSFetchedResultsController *plugins;
 }
 
 @property (nonatomic, retain) Host *host;
-@property (nonatomic, retain) NSArray *services;
+@property (nonatomic, retain) NSFetchedResultsController *plugins;
 
 -(void)sortServices;
 

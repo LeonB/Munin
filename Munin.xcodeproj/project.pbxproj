@@ -30,6 +30,9 @@
 		35736C1A127CDFDE0044A6A3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 35736C19127CDFDE0044A6A3 /* Icon-72.png */; };
 		35799F7D1281E813009824AD /* HomePageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35799F7C1281E813009824AD /* HomePageParser.m */; };
 		35799FAD1281EA03009824AD /* NSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 35799FAC1281EA03009824AD /* NSSingleton.m */; };
+		357FABA7128B3F8200604586 /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = 357FABA6128B3F8200604586 /* Host.m */; };
+		357FABAE128B3FA800604586 /* HostData.m in Sources */ = {isa = PBXBuildFile; fileRef = 357FABAD128B3FA800604586 /* HostData.m */; };
+		357FABCE128B40B100604586 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 357FABCD128B40B100604586 /* Service.m */; };
 		358AE0751286217B00A48B26 /* UITableViewControllerWithRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 358AE0741286217B00A48B26 /* UITableViewControllerWithRefresh.m */; };
 		358AE0AC1286237C00A48B26 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358AE09F1286237C00A48B26 /* RootViewController.m */; };
 		358AE0AD1286237C00A48B26 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358AE0A21286237C00A48B26 /* EGORefreshTableHeaderView.m */; };
@@ -42,6 +45,7 @@
 		358AE0B41286237C00A48B26 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 358AE0AA1286237C00A48B26 /* whiteArrow.png */; };
 		358AE0B51286237C00A48B26 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 358AE0AB1286237C00A48B26 /* whiteArrow@2x.png */; };
 		358AE0BF128623CB00A48B26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358AE0BE128623CB00A48B26 /* QuartzCore.framework */; };
+		35928AD8128C6DF40024EBF7 /* PluginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */; };
 		3594313C12836CF100C91818 /* HostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3594313B12836CF100C91818 /* HostTableViewCell.m */; };
 		35B102D812870BAB00BD3323 /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B102D712870BAB00BD3323 /* Plugin.m */; };
 		35D39C6A128362DF00FA16FA /* MuninMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D39C68128362DF00FA16FA /* MuninMasterViewController.m */; };
@@ -53,11 +57,9 @@
 		35DD266F128634630026C989 /* psst2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 35DD266C128634630026C989 /* psst2.wav */; };
 		35DD27C31286F5B60026C989 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD27C11286F5B60026C989 /* HostViewController.m */; };
 		35DD27C41286F5B60026C989 /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DD27C21286F5B60026C989 /* HostViewController.xib */; };
-		35DD287B1286FF3C0026C989 /* Host.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD287A1286FF3C0026C989 /* Host.m */; };
 		35DD28D9128705270026C989 /* HostPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD28D8128705270026C989 /* HostPageParser.m */; };
-		35FA59FE1282932E00EE91EE /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F51282932E00EE91EE /* Service.m */; };
+		35E17B421287D388008E9A8F /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E17B411287D388008E9A8F /* ServiceTableViewCell.m */; };
 		35FA5A001282932E00EE91EE /* MuninMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F91282932E00EE91EE /* MuninMaster.m */; };
-		35FA5A021282932E00EE91EE /* HostService.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59FD1282932E00EE91EE /* HostService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,12 @@
 		35799F861281E937009824AD /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		35799FAB1281EA03009824AD /* NSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSingleton.h; sourceTree = "<group>"; };
 		35799FAC1281EA03009824AD /* NSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSingleton.m; sourceTree = "<group>"; };
+		357FABA5128B3F8200604586 /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
+		357FABA6128B3F8200604586 /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Host.m; sourceTree = "<group>"; };
+		357FABAC128B3FA800604586 /* HostData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostData.h; sourceTree = "<group>"; };
+		357FABAD128B3FA800604586 /* HostData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostData.m; sourceTree = "<group>"; };
+		357FABCC128B40B100604586 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		357FABCD128B40B100604586 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		358AE0731286217B00A48B26 /* UITableViewControllerWithRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewControllerWithRefresh.h; sourceTree = "<group>"; };
 		358AE0741286217B00A48B26 /* UITableViewControllerWithRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewControllerWithRefresh.m; sourceTree = "<group>"; };
 		358AE09E1286237C00A48B26 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 		358AE0AA1286237C00A48B26 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		358AE0AB1286237C00A48B26 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		358AE0BE128623CB00A48B26 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		35928AD6128C6DF40024EBF7 /* PluginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginTableViewCell.h; sourceTree = "<group>"; };
+		35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginTableViewCell.m; sourceTree = "<group>"; };
 		3594313A12836CF100C91818 /* HostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostTableViewCell.h; sourceTree = "<group>"; };
 		3594313B12836CF100C91818 /* HostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostTableViewCell.m; sourceTree = "<group>"; };
 		35B102D612870BAB00BD3323 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
@@ -150,16 +160,12 @@
 		35DD27C01286F5B60026C989 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
 		35DD27C11286F5B60026C989 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
 		35DD27C21286F5B60026C989 /* HostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HostViewController.xib; sourceTree = "<group>"; };
-		35DD28791286FF3C0026C989 /* Host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Host.h; sourceTree = "<group>"; };
-		35DD287A1286FF3C0026C989 /* Host.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Host.m; sourceTree = "<group>"; };
 		35DD28D7128705270026C989 /* HostPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostPageParser.h; sourceTree = "<group>"; };
 		35DD28D8128705270026C989 /* HostPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostPageParser.m; sourceTree = "<group>"; };
-		35FA59F41282932E00EE91EE /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
-		35FA59F51282932E00EE91EE /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		35E17B401287D388008E9A8F /* ServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewCell.h; sourceTree = "<group>"; };
+		35E17B411287D388008E9A8F /* ServiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewCell.m; sourceTree = "<group>"; };
 		35FA59F81282932E00EE91EE /* MuninMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMaster.h; sourceTree = "<group>"; };
 		35FA59F91282932E00EE91EE /* MuninMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMaster.m; sourceTree = "<group>"; };
-		35FA59FC1282932E00EE91EE /* HostService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostService.h; sourceTree = "<group>"; };
-		35FA59FD1282932E00EE91EE /* HostService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,19 +256,19 @@
 		3520DFEF127DC47F00933FCC /* Application Resources */ = {
 			isa = PBXGroup;
 			children = (
+				357FABCC128B40B100604586 /* Service.h */,
+				357FABCD128B40B100604586 /* Service.m */,
+				357FABAC128B3FA800604586 /* HostData.h */,
+				357FABAD128B3FA800604586 /* HostData.m */,
 				3520DFFF127DC4FD00933FCC /* __Munin.sqlite */,
 				3520DFFD127DC4D000933FCC /* Munin-Info.plist */,
 				35498958127C3AE7003A1D28 /* Host.xcdatamodel */,
+				357FABA5128B3F8200604586 /* Host.h */,
+				357FABA6128B3F8200604586 /* Host.m */,
 				35B102D612870BAB00BD3323 /* Plugin.h */,
 				35B102D712870BAB00BD3323 /* Plugin.m */,
-				35DD28791286FF3C0026C989 /* Host.h */,
-				35DD287A1286FF3C0026C989 /* Host.m */,
-				35FA59F41282932E00EE91EE /* Service.h */,
-				35FA59F51282932E00EE91EE /* Service.m */,
 				35FA59F81282932E00EE91EE /* MuninMaster.h */,
 				35FA59F91282932E00EE91EE /* MuninMaster.m */,
-				35FA59FC1282932E00EE91EE /* HostService.h */,
-				35FA59FD1282932E00EE91EE /* HostService.m */,
 			);
 			name = "Application Resources";
 			sourceTree = "<group>";
@@ -337,6 +343,10 @@
 				3520E320127DE9DB00933FCC /* MuninMasterTableViewCell.m */,
 				3594313A12836CF100C91818 /* HostTableViewCell.h */,
 				3594313B12836CF100C91818 /* HostTableViewCell.m */,
+				35E17B401287D388008E9A8F /* ServiceTableViewCell.h */,
+				35E17B411287D388008E9A8F /* ServiceTableViewCell.m */,
+				35928AD6128C6DF40024EBF7 /* PluginTableViewCell.h */,
+				35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -584,9 +594,7 @@
 				3520E3BF127DEE0100933FCC /* MuninMasterTableViewCell.m in Sources */,
 				35799F7D1281E813009824AD /* HomePageParser.m in Sources */,
 				35799FAD1281EA03009824AD /* NSSingleton.m in Sources */,
-				35FA59FE1282932E00EE91EE /* Service.m in Sources */,
 				35FA5A001282932E00EE91EE /* MuninMaster.m in Sources */,
-				35FA5A021282932E00EE91EE /* HostService.m in Sources */,
 				35D39C6A128362DF00FA16FA /* MuninMasterViewController.m in Sources */,
 				3594313C12836CF100C91818 /* HostTableViewCell.m in Sources */,
 				3560ECE81285CE6B006430B1 /* indexKeyedDictionaryExtension.m in Sources */,
@@ -595,9 +603,13 @@
 				358AE0AD1286237C00A48B26 /* EGORefreshTableHeaderView.m in Sources */,
 				35DD2640128633360026C989 /* SoundEffect.m in Sources */,
 				35DD27C31286F5B60026C989 /* HostViewController.m in Sources */,
-				35DD287B1286FF3C0026C989 /* Host.m in Sources */,
 				35DD28D9128705270026C989 /* HostPageParser.m in Sources */,
 				35B102D812870BAB00BD3323 /* Plugin.m in Sources */,
+				35E17B421287D388008E9A8F /* ServiceTableViewCell.m in Sources */,
+				357FABA7128B3F8200604586 /* Host.m in Sources */,
+				357FABAE128B3FA800604586 /* HostData.m in Sources */,
+				357FABCE128B40B100604586 /* Service.m in Sources */,
+				35928AD8128C6DF40024EBF7 /* PluginTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

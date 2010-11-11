@@ -11,8 +11,6 @@
 #import "Element.h"
 #import "MuninMaster.h"
 #import "Host.h"
-#import "HostService.h"
-#import "Service.h"
 #import "MuninAppDelegate.h"
 
 @implementation HomePageParser
@@ -58,23 +56,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HomePageParser);
 			host.name = hostElement.contentsText;
 			host.url = [NSString stringWithFormat:@"%@/%@", base, path];
 			
-			NSArray *serviceElements = [(Element *)[hostElement parent] selectElements: @"li a"];
-			for (Element *serviceElement in serviceElements) {
-				//NSLog(@"serviceElement: %@", serviceElement);
-				//NSLog(@"service: %@", serviceElement.contentsText);
-				
-				Service *service = [NSEntityDescription insertNewObjectForEntityForName:@"Service" inManagedObjectContext:managedObjectContext];
-				service.name = serviceElement.contentsText;
-				
-				HostService *hostService = [NSEntityDescription insertNewObjectForEntityForName:@"HostService" inManagedObjectContext:managedObjectContext];
-				
-				NSString *base = [NSString stringWithFormat:@"%@", url];
-				NSString *path = [[serviceElement selectElement: @"a"] attribute:@"href"];
-				
-				hostService.url = [NSString stringWithFormat:@"%@/%@", base, path];
-				hostService.host = host;
-				hostService.service = service;
-			}
 			//NSLog(@"host: %@", host);
 			[muninMaster addHostsObject:host];
 		}

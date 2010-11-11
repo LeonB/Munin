@@ -2,16 +2,16 @@
 //  Host.h
 //  Munin
 //
-//  Created by Leon Bogaert on 07-11-10.
+//  Created by Leon Bogaert on 10-11-10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
 
-@class HostService;
+@class HostData;
 @class MuninMaster;
 
-@interface Host :  NSManagedObject
+@interface Host :  NSManagedObject  
 {
 }
 
@@ -20,17 +20,17 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) MuninMaster * muninMaster;
-@property (nonatomic, retain) NSSet* hostServices;
-@property (nonatomic, retain) NSArray* services;
+@property (nonatomic, retain) NSSet* hostDatas;
+@property (nonatomic, retain) NSFetchedPropertyDescription* plugins;
 
 @end
 
 
 @interface Host (CoreDataGeneratedAccessors)
-- (void)addHostServicesObject:(HostService *)value;
-- (void)removeHostServicesObject:(HostService *)value;
-- (void)addHostServices:(NSSet *)value;
-- (void)removeHostServices:(NSSet *)value;
+- (void)addHostDatasObject:(HostData *)value;
+- (void)removeHostDatasObject:(HostData *)value;
+- (void)addHostDatas:(NSSet *)value;
+- (void)removeHostDatas:(NSSet *)value;
 
 @end
 

@@ -13,7 +13,7 @@
 #import "Element.h"
 #import "Service.h"
 #import "Plugin.h"
-#import "HostService.h"
+#import "HostData.h"
 
 @implementation HostPageParser
 SYNTHESIZE_SINGLETON_FOR_CLASS(HostPageParser);
@@ -40,11 +40,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HostPageParser);
 	NSArray *serviceElements = [(Element *)document selectElements: @"h3"];
 	for (Element *serviceElement in serviceElements) {
 		Service *service = [NSEntityDescription insertNewObjectForEntityForName:@"Service" inManagedObjectContext:managedObjectContext];
-		service.name = serviceElement.contentsText;
-		
-		HostService *hostService = [NSEntityDescription insertNewObjectForEntityForName:@"HostService" inManagedObjectContext:managedObjectContext];
-		hostService.host = host;
-		hostService.service = service;
+		service.name = [serviceElement.contentsText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		
 //		NSLog(@"service: %@", service);
 
@@ -56,11 +52,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HostPageParser);
 			NSString *path = [pluginElement attribute:@"href"];
 			
 			Plugin *plugin = [NSEntityDescription insertNewObjectForEntityForName:@"Plugin" inManagedObjectContext:managedObjectContext];
-			plugin.name = pluginElement.contentsText;
+			plugin.name = [pluginElement.contentsText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 			plugin.url = [NSString stringWithFormat:@"%@/%@", base, path];
 			plugin.service = service;
 			
-//			NSLog(@"plugin: %@", plugin);
+			HostData *hostData = [NSEntityDescription insertNewObjectForEntityForName:@"HostData" inManagedObjectContext:managedObjectContext];
+			hostData.host = host;
+			hostData.plugin = plugin;
 		}
 	}
 	//NSLog(@"host: %@", host);
