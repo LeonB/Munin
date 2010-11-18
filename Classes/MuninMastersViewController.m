@@ -88,7 +88,7 @@
 			break;
 	}
 	
-	return @"";
+	return nil;
 }
 
 
@@ -111,6 +111,7 @@
 			return 1;
 			break;
 	}
+	return numberOfRows;
 }
 
 

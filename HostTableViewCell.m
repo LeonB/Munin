@@ -7,7 +7,7 @@
 //
 
 #import "HostTableViewCell.h"
-
+#import "UACellBackgroundView.h"
 
 @implementation HostTableViewCell
 @synthesize host;
@@ -16,10 +16,17 @@
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         // Initialization code
 		self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		
+		// Background Image
+		self.backgroundView = [[[UACellBackgroundView alloc] initWithFrame:CGRectZero] autorelease];
+		self.textLabel.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
 
+- (void)setPosition:(UACellBackgroundViewPosition)newPosition {
+    [(UACellBackgroundView *)self.backgroundView setPosition:newPosition];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 	

@@ -110,12 +110,16 @@
 		if (found == NO) {
 			HostData *hostData = [NSEntityDescription insertNewObjectForEntityForName:@"HostData" inManagedObjectContext:self.managedObjectContext];
 			hostData.url = [hostDatasDict objectForKey:@"url"];
-			hostData.url = @"test";
 			hostData.host = self;
 			hostData.plugin = [hostDatasDict objectForKey:@"plugin"];
+			//NSLog(@"hostData.service: %@", hostData.service);
 			//NSLog(@"hostData.plugin: %@", hostData.plugin);
 		}
 	}
+	
+	//importedHostDatas gebruiken om te verwijderen
+	//withIdentifier: multiple mogelijk maken (*)
+	//Eventueel met een NSArray?
 
 	//NSLog(@"self: %@", self);
 	

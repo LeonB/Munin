@@ -31,6 +31,7 @@
 - (void)removeHostDatasObject:(HostData *)value;
 - (void)addHostDatas:(NSSet *)value;
 - (void)removeHostDatas:(NSSet *)value;
+- (Boolean)sync;
 
 @end
 

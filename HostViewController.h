@@ -9,15 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "Host.h"
 #import "UITableViewControllerWithRefresh.h"
+#import "HostDataViewController.h"
+#import "PluginTableViewCell.h"
+#import "Plugin.h"
 
 @interface HostViewController : UITableViewControllerWithRefresh <NSFetchedResultsControllerDelegate> {
 	Host *host;
-	NSFetchedResultsController *plugins;
+	NSFetchedResultsController *hostDatas;
+	HostDataViewController *hostDataViewController;
 }
 
 @property (nonatomic, retain) Host *host;
-@property (nonatomic, retain) NSFetchedResultsController *plugins;
+@property (nonatomic, retain) NSFetchedResultsController *hostDatas;
+@property (nonatomic, retain) HostDataViewController *hostDataViewController;
 
 -(void)sortServices;
+- (void)configureCell:(PluginTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath inBackground:(Boolean)background;
+- (void)didSelectHostCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)loadHostDataView:(HostData *)hostData;
 
 @end

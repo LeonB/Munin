@@ -1,16 +1,16 @@
 //
-//  MuninMasterTableViewCell.m
+//  HostDataTableViewCell.m
 //  Munin
 //
-//  Created by Leon Bogaert on 31-10-10.
+//  Created by Leon Bogaert on 14-11-10.
 //  Copyright 2010 Tim_online. All rights reserved.
 //
 
-#import "MuninMasterTableViewCell.h"
-#import "UACellBackgroundView.h"
+#import "HostDataTableViewCell.h"
 
-@implementation MuninMasterTableViewCell
-@synthesize muninMaster;
+
+@implementation HostDataTableViewCell
+@synthesize hostData;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
@@ -22,30 +22,29 @@
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-
+	
     [super setSelected:selected animated:animated];
-
+	
     // Configure the view for the selected state
 }
 
 #pragma mark -
 #pragma mark Recipe set accessor
 
-- (void)setMuninMaster:(MuninMaster *)newMuninMaster {
-	NSLog(@"setMuninMaster called");
-    if (newMuninMaster != muninMaster) {
-        [muninMaster release];
-        muninMaster = [newMuninMaster retain];
+- (void)setHostData:(HostData *)newHostdata {
+	NSLog(@"setHostData called");
+    if (newHostdata != hostData) {
+        [hostData release];
+        hostData = [newHostdata retain];
 	}
-
-	self.textLabel.text = muninMaster.name;
+	
+	//self.textLabel.text = hostData.name;
 }
 
 
 - (void)dealloc {
-	[muninMaster release];
+	[hostData release];
     [super dealloc];
 }
-
 
 @end

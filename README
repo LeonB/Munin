@@ -24,3 +24,18 @@ Core Data overzicht:
    - http://stackoverflow.com/questions/2209228/core-data-pattern-how-to-efficiently-update-local-info-with-changes-from-network
    - http://henrik.nyh.se/2007/01/importing-legacy-data-into-core-data-with-the-find-or-create-or-delete-pattern
    - http://developer.apple.com/library/mac/#DOCUMENTATION/Cocoa/Conceptual/CoreData/Articles/cdImporting.html
+   
+uitableview(cell) customizing:
+  - http://code.coneybeare.net/how-to-make-custom-drawn-gradient-backgrounds
+  - http://blog.urbanapps.com/post/366385398/how-to-make-custom-drawn-gradient-backgrounds-in-a
+  - http://cocoawithlove.com/2009/04/easy-custom-uitableview-drawing.html
+  
+Backgrounds:
+  - http://www.carbonfibergear.com/nine-free-carbon-fiber-backgrounds-and-patterns-for-your-iphone/
+  - http://ebin.wordpress.com/2010/09/06/free-carbon-fiber-iphone-wallpaper/
+  
+Voorbeeldjes:
+  - http://www.appsamuck.com/
+  
+@TODO:
+  - Favorites met een shortcut op de homepage (plugins en/of services?)

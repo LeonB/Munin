@@ -23,6 +23,9 @@
 		35498921127C0492003A1D28 /* libElementParser.a in Sources */ = {isa = PBXBuildFile; fileRef = 35498904127C03D8003A1D28 /* libElementParser.a */; };
 		35498922127C0497003A1D28 /* libElementParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35498904127C03D8003A1D28 /* libElementParser.a */; };
 		35498959127C3AE7003A1D28 /* Host.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 35498958127C3AE7003A1D28 /* Host.xcdatamodel */; };
+		3552447112908AC100AD80D7 /* HostDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3552447012908AC100AD80D7 /* HostDataTableViewCell.m */; };
+		355245221290912800AD80D7 /* HostDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355245201290912800AD80D7 /* HostDataViewController.m */; };
+		355245231290912800AD80D7 /* HostDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355245211290912800AD80D7 /* HostDataViewController.xib */; };
 		3560ECE81285CE6B006430B1 /* indexKeyedDictionaryExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3560ECE71285CE6B006430B1 /* indexKeyedDictionaryExtension.m */; };
 		35736B64127CD9CF0044A6A3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35736B63127CD9CF0044A6A3 /* CoreData.framework */; };
 		35736BF7127CDE280044A6A3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 35736BF6127CDE280044A6A3 /* Icon.png */; };
@@ -47,6 +50,10 @@
 		358AE0BF128623CB00A48B26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358AE0BE128623CB00A48B26 /* QuartzCore.framework */; };
 		35928AD8128C6DF40024EBF7 /* PluginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */; };
 		3594313C12836CF100C91818 /* HostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3594313B12836CF100C91818 /* HostTableViewCell.m */; };
+		35AF7571128FFA9D005EF8FD /* carbon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 35AF756F128FFA9D005EF8FD /* carbon1.png */; };
+		35AF7572128FFA9D005EF8FD /* carbon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35AF7570128FFA9D005EF8FD /* carbon1@2x.png */; };
+		35AF7590128FFE5D005EF8FD /* UITableViewController Carbon.h in Resources */ = {isa = PBXBuildFile; fileRef = 35AF758F128FFE5D005EF8FD /* UITableViewController Carbon.h */; };
+		35AF7594128FFEBB005EF8FD /* UITableViewController Carbon.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AF7593128FFEBB005EF8FD /* UITableViewController Carbon.m */; };
 		35B102D812870BAB00BD3323 /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B102D712870BAB00BD3323 /* Plugin.m */; };
 		35D39C6A128362DF00FA16FA /* MuninMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35D39C68128362DF00FA16FA /* MuninMasterViewController.m */; };
 		35D39C6B128362DF00FA16FA /* MuninMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D39C69128362DF00FA16FA /* MuninMasterViewController.xib */; };
@@ -59,6 +66,7 @@
 		35DD27C41286F5B60026C989 /* HostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DD27C21286F5B60026C989 /* HostViewController.xib */; };
 		35DD28D9128705270026C989 /* HostPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DD28D8128705270026C989 /* HostPageParser.m */; };
 		35E17B421287D388008E9A8F /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E17B411287D388008E9A8F /* ServiceTableViewCell.m */; };
+		35E89E7B129084150021C79A /* UACellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E89E7A129084150021C79A /* UACellBackgroundView.m */; };
 		35FA5A001282932E00EE91EE /* MuninMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FA59F91282932E00EE91EE /* MuninMaster.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +117,11 @@
 		35428F15127CE55700EB7486 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		354988FF127C03D8003A1D28 /* ElementParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElementParser.xcodeproj; path = ../ElementParser/ElementParser.xcodeproj; sourceTree = SOURCE_ROOT; };
 		35498958127C3AE7003A1D28 /* Host.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Host.xcdatamodel; sourceTree = "<group>"; };
+		3552446F12908AC100AD80D7 /* HostDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostDataTableViewCell.h; sourceTree = "<group>"; };
+		3552447012908AC100AD80D7 /* HostDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostDataTableViewCell.m; sourceTree = "<group>"; };
+		3552451F1290912800AD80D7 /* HostDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostDataViewController.h; sourceTree = "<group>"; };
+		355245201290912800AD80D7 /* HostDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostDataViewController.m; sourceTree = "<group>"; };
+		355245211290912800AD80D7 /* HostDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HostDataViewController.xib; sourceTree = "<group>"; };
 		3560ECD01285CAC7006430B1 /* NSManagedObjectContext_UpdateEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSManagedObjectContext_UpdateEntity.h; sourceTree = "<group>"; };
 		3560ECE61285CE6B006430B1 /* indexKeyedDictionaryExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = indexKeyedDictionaryExtension.h; sourceTree = "<group>"; };
 		3560ECE71285CE6B006430B1 /* indexKeyedDictionaryExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = indexKeyedDictionaryExtension.m; sourceTree = "<group>"; };
@@ -146,6 +159,10 @@
 		35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginTableViewCell.m; sourceTree = "<group>"; };
 		3594313A12836CF100C91818 /* HostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostTableViewCell.h; sourceTree = "<group>"; };
 		3594313B12836CF100C91818 /* HostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostTableViewCell.m; sourceTree = "<group>"; };
+		35AF756F128FFA9D005EF8FD /* carbon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carbon1.png; sourceTree = "<group>"; };
+		35AF7570128FFA9D005EF8FD /* carbon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carbon1@2x.png"; sourceTree = "<group>"; };
+		35AF758F128FFE5D005EF8FD /* UITableViewController Carbon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController Carbon.h"; sourceTree = "<group>"; };
+		35AF7593128FFEBB005EF8FD /* UITableViewController Carbon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController Carbon.m"; sourceTree = "<group>"; };
 		35B102D612870BAB00BD3323 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
 		35B102D712870BAB00BD3323 /* Plugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plugin.m; sourceTree = "<group>"; };
 		35D39C67128362DF00FA16FA /* MuninMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMasterViewController.h; sourceTree = "<group>"; };
@@ -164,6 +181,8 @@
 		35DD28D8128705270026C989 /* HostPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostPageParser.m; sourceTree = "<group>"; };
 		35E17B401287D388008E9A8F /* ServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewCell.h; sourceTree = "<group>"; };
 		35E17B411287D388008E9A8F /* ServiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTableViewCell.m; sourceTree = "<group>"; };
+		35E89E79129084150021C79A /* UACellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UACellBackgroundView.h; sourceTree = "<group>"; };
+		35E89E7A129084150021C79A /* UACellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UACellBackgroundView.m; sourceTree = "<group>"; };
 		35FA59F81282932E00EE91EE /* MuninMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuninMaster.h; sourceTree = "<group>"; };
 		35FA59F91282932E00EE91EE /* MuninMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuninMaster.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -295,6 +314,10 @@
 				3560ECE71285CE6B006430B1 /* indexKeyedDictionaryExtension.m */,
 				35DD263E128633360026C989 /* SoundEffect.h */,
 				35DD263F128633360026C989 /* SoundEffect.m */,
+				35AF758F128FFE5D005EF8FD /* UITableViewController Carbon.h */,
+				35AF7593128FFEBB005EF8FD /* UITableViewController Carbon.m */,
+				35E89E79129084150021C79A /* UACellBackgroundView.h */,
+				35E89E7A129084150021C79A /* UACellBackgroundView.m */,
 			);
 			name = Libs;
 			sourceTree = "<group>";
@@ -302,6 +325,7 @@
 		3520E209127DD07000933FCC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				35AF756E128FFA91005EF8FD /* backgrounds */,
 				3520E20A127DD07600933FCC /* Icons */,
 			);
 			name = Images;
@@ -332,6 +356,7 @@
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				35D39C69128362DF00FA16FA /* MuninMasterViewController.xib */,
 				35DD27C21286F5B60026C989 /* HostViewController.xib */,
+				355245211290912800AD80D7 /* HostDataViewController.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -347,6 +372,8 @@
 				35E17B411287D388008E9A8F /* ServiceTableViewCell.m */,
 				35928AD6128C6DF40024EBF7 /* PluginTableViewCell.h */,
 				35928AD7128C6DF40024EBF7 /* PluginTableViewCell.m */,
+				3552446F12908AC100AD80D7 /* HostDataTableViewCell.h */,
+				3552447012908AC100AD80D7 /* HostDataTableViewCell.m */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -386,6 +413,8 @@
 				35D39C68128362DF00FA16FA /* MuninMasterViewController.m */,
 				35DD27C01286F5B60026C989 /* HostViewController.h */,
 				35DD27C11286F5B60026C989 /* HostViewController.m */,
+				3552451F1290912800AD80D7 /* HostDataViewController.h */,
+				355245201290912800AD80D7 /* HostDataViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -450,6 +479,15 @@
 				358AE0AB1286237C00A48B26 /* whiteArrow@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		35AF756E128FFA91005EF8FD /* backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				35AF756F128FFA9D005EF8FD /* carbon1.png */,
+				35AF7570128FFA9D005EF8FD /* carbon1@2x.png */,
+			);
+			name = backgrounds;
 			sourceTree = "<group>";
 		};
 		35DD26691286344D0026C989 /* sounds */ = {
@@ -575,6 +613,10 @@
 				35DD266E128634630026C989 /* psst1.wav in Resources */,
 				35DD266F128634630026C989 /* psst2.wav in Resources */,
 				35DD27C41286F5B60026C989 /* HostViewController.xib in Resources */,
+				35AF7571128FFA9D005EF8FD /* carbon1.png in Resources */,
+				35AF7572128FFA9D005EF8FD /* carbon1@2x.png in Resources */,
+				35AF7590128FFE5D005EF8FD /* UITableViewController Carbon.h in Resources */,
+				355245231290912800AD80D7 /* HostDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +652,10 @@
 				357FABAE128B3FA800604586 /* HostData.m in Sources */,
 				357FABCE128B40B100604586 /* Service.m in Sources */,
 				35928AD8128C6DF40024EBF7 /* PluginTableViewCell.m in Sources */,
+				35AF7594128FFEBB005EF8FD /* UITableViewController Carbon.m in Sources */,
+				35E89E7B129084150021C79A /* UACellBackgroundView.m in Sources */,
+				3552447112908AC100AD80D7 /* HostDataTableViewCell.m in Sources */,
+				355245221290912800AD80D7 /* HostDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

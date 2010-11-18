@@ -16,5 +16,6 @@
 @dynamic url;
 @dynamic plugin;
 @dynamic host;
+//@dynamic service;
 
 @end

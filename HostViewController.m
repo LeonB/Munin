@@ -13,17 +13,17 @@
 #import "PluginTableViewCell.h"
 
 @implementation HostViewController
-@synthesize host, plugins;
+@synthesize host, hostDatas, hostDataViewController;
 
-- (NSFetchedResultsController *)plugins {
-	if (plugins == NULL) {
-		NSEntityDescription *entity = [NSEntityDescription entityForName:@"Plugin" inManagedObjectContext:self.host.managedObjectContext];
+- (NSFetchedResultsController *)hostDatas {
+	if (hostDatas == NULL) {
+		NSEntityDescription *entity = [NSEntityDescription entityForName:@"HostData" inManagedObjectContext:self.host.managedObjectContext];
 		
-        NSSortDescriptor *sortDescriptorSection = [[NSSortDescriptor alloc] initWithKey:@"service.name" ascending:YES]; //nodig anders geeft 'ie een "has an out of order section name" melding
-        NSSortDescriptor *sortDescriptorName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+        NSSortDescriptor *sortDescriptorSection = [[NSSortDescriptor alloc] initWithKey:@"plugin.service.name" ascending:YES]; //nodig anders geeft 'ie een "has an out of order section name" melding
+        NSSortDescriptor *sortDescriptorName = [[NSSortDescriptor alloc] initWithKey:@"plugin.name" ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptorSection, sortDescriptorName, nil];
 		
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY hostDatas.host == %@", self.host];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"host == %@", self.host];
 		
 		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 		[fetchRequest setEntity:entity];
@@ -31,16 +31,16 @@
         [fetchRequest setSortDescriptors:sortDescriptors];
 		
 		NSError *error;
-		plugins = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.host.managedObjectContext sectionNameKeyPath:@"service.name" cacheName:@"Plugins"];
-		plugins.delegate = self;
+		hostDatas = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.host.managedObjectContext sectionNameKeyPath:@"plugin.service.name" cacheName:@"HostDatas"];
+		hostDatas.delegate = self;
 		
 		NSLog(@"Going to perform fetch");
-		[plugins performFetch:&error];
+		[hostDatas performFetch:&error];
 		
 		NSLog(@"[fetchRequest release]");
 		[fetchRequest release];
 	}
-	return plugins;
+	return hostDatas;
 }
 
 #pragma mark -
@@ -97,7 +97,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    NSInteger count = [[self.plugins sections] count];
+    NSInteger count = [[self.hostDatas sections] count];
 
 	if (count == 0) {
 		count = 1;
@@ -110,8 +110,8 @@
     NSString *title = nil;
 	
     // Return a title or nil as appropriate for the section.	
-    if ([[self.plugins sections] count] > 0) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.plugins sections] objectAtIndex:section];
+    if ([[self.hostDatas sections] count] > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.hostDatas sections] objectAtIndex:section];
 		title = [sectionInfo name];
     }
     
@@ -122,8 +122,8 @@
     // Return the number of rows in the section.
     NSInteger numberOfRows = 0;
 	
-    if ([[self.plugins sections] count] > 0) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.plugins sections] objectAtIndex:section];
+    if ([[self.hostDatas sections] count] > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.hostDatas sections] objectAtIndex:section];
         numberOfRows = [sectionInfo numberOfObjects];
     }
     
@@ -148,7 +148,8 @@
 
 - (void)configureCell:(PluginTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     // Configure the cell
-	Plugin *plugin = [self.plugins objectAtIndexPath:indexPath];
+	HostData *hostData = [self.hostDatas objectAtIndexPath:indexPath];
+	Plugin *plugin = hostData.plugin;
     cell.plugin = plugin;
 }
 
@@ -196,15 +197,29 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath inBackground:(Boolean)background {
+	[self didSelectHostCellAtIndexPath:indexPath];
+}
+
+- (void)didSelectHostCellAtIndexPath:(NSIndexPath *)indexPath {
+	HostData *hostData = [self.hostDatas objectAtIndexPath:indexPath];
+	[self loadHostDataView:hostData];
+}
+
+- (void)loadHostDataView:(HostData *)hostData {
+	NSLog(@"loadHostDataView");
+	
+	HostDataViewController *controller = self.hostDataViewController;
+	if (![controller.hostData isEqual:hostData]) {
+		controller = [[HostDataViewController alloc] initWithNibName:@"HostDataViewController" bundle:nil];
+		
+		controller.hostData = hostData;
+		
+		self.hostDataViewController = controller;
+		[controller release];
+	}
+	
+	[self.navigationController pushViewControllerOnMainThread:self.hostDataViewController animated:YES];
 }
 
 
@@ -225,6 +240,9 @@
 
 
 - (void)dealloc {
+	[host release];
+	[hostDatas release];
+	[hostDataViewController release];
     [super dealloc];
 }
 
